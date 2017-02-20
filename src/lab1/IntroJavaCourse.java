@@ -1,6 +1,5 @@
 package lab1;
 
-import javax.swing.JOptionPane;
 
 /**
  * Describe responsibilities here.
@@ -18,9 +17,7 @@ private double credits;
     @Override
     public void setCredits(double c) {
         if (c < 0.5 || c > 4.0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: credits must be in the range 0.5 to 4.0");
-            System.exit(0);
+            throw new IllegalArgumentException("Credits must be in the range of 0.5 to 4.0");
         }
         this.credits = c;
     }

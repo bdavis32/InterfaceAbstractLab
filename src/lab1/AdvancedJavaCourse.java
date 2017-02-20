@@ -1,6 +1,5 @@
 package lab1;
 
-import javax.swing.JOptionPane;
 
 /**
  * Describe responsibilities here.
@@ -18,9 +17,8 @@ public class AdvancedJavaCourse extends TechCourse {
     @Override
     public void setCredits(double c) {
         if (c < 0.5 || c > 4.0) {
-            JOptionPane.showMessageDialog(null,
+            throw new IllegalArgumentException(
                     "Error: credits must be in the range 0.5 to 4.0");
-            System.exit(0);
         }
         this.credits = c;
     }

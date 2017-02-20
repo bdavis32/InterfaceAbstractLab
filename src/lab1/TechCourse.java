@@ -25,9 +25,8 @@ public abstract class TechCourse {
 
     public final void setCourseNumber(String courseNumber) {
         if (courseNumber == null || courseNumber.length() == 0) {
-            JOptionPane.showMessageDialog(null,
+            throw new IllegalArgumentException(
                     "Error: courseNumber cannot be null of empty string");
-            System.exit(0);
         }
         this.courseNumber = courseNumber;
     }
@@ -51,9 +50,7 @@ public abstract class TechCourse {
 
     public void setPrerequisites(String prerequisites) {
         if (prerequisites == null || prerequisites.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: prerequisites cannot be null of empty string");
-            System.exit(0);
+            throw new IllegalArgumentException("Error: prerequisites cannot be null of empty string");
         }
         this.prerequisites = prerequisites;
     }
