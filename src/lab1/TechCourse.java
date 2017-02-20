@@ -61,9 +61,8 @@ public abstract class TechCourse {
 
     public final void setCourseName(String courseName) {
         if (courseName == null || courseName.length() == 0) {
-            JOptionPane.showMessageDialog(null,
+            throw new IllegalArgumentException(
                     "Error: courseName cannot be null of empty string");
-            System.exit(0);
         }
         this.courseName = courseName;
     }
